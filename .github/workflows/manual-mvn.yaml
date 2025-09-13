@@ -39,4 +39,11 @@ jobs:
             with:
               name: spring-petclinic-${{ matrix.java }}.jar
               path: '**/target/*.jar'
+          - name: send email on failure
+            run: "everything seems problematic"
+            if: ${{ failure() }}
+          - name: send email on success
+            run: "everything seems fun"
+            if: ${{ success() }}
+            
 
