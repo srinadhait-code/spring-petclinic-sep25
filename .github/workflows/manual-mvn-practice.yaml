@@ -24,10 +24,9 @@ jobs:
           - uses: actions/setup-java@v5
             with:
                 distribution: 'zulu'
-                java-version: ${{ matrix.java }}
-                cache: maven
+                java-version: '21'
           - name: build package
-            run: mvn ${{ vars.GOAL  }}
+            run: mvn clean package
           - name: publish test results
             uses: EnricoMi/publish-unit-test-result-action@v2
             with:
@@ -37,7 +36,7 @@ jobs:
           - name: Uploading packaged jar files
             uses: actions/upload-artifact@v4
             with:
-              name: spring-petclinic-${{ matrix.java }}.jar
+              name: spring-petclinic-Sep21.jar
               path: '**/target/*.jar'
           - name: send email on success
             run: "everything seems fun"
