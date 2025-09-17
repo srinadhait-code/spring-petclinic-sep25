@@ -23,7 +23,7 @@ jobs:
           - uses: actions/checkout@v5
           - uses: actions/setup-java@v5
             with:
-                distribution: 'temurin'
+                distribution: 'zulu'
                 java-version: ${{ matrix.java }}
                 cache: maven
           - name: build package
