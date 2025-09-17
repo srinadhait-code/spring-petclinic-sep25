@@ -1,5 +1,5 @@
 ---
-name: Manual maven steps for ci
+name: Maven steps for ci
 on:
     pull_request:
       branches: 
